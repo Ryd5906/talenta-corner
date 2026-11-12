@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talenta Corner — Direction B · Tissage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#E4E2D8;
+    --stone-2:#D6D3C6;
+    --indigo:#181B33;
+    --verm:#C0391F;
+    --line:#B5B2A4;
+    --muted:#5F6257;
+    --thread:rgba(24,27,51,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--stone);color:var(--indigo);font-family:"Instrument Sans",system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 52px}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+  .display{font-family:"Big Shoulders Display",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.005em}
+
+  /* warp texture */
+  .warp{
+    background-image:repeating-linear-gradient(90deg,var(--thread) 0 1px,transparent 1px 22px);
+  }
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--indigo);background:var(--stone)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
+  .knot{width:24px;height:24px;flex:none;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+  .knot i{background:var(--verm)}
+  .knot i:nth-child(2),.knot i:nth-child(3){background:var(--indigo)}
+  .nav ul{display:flex;gap:34px;list-style:none}
+  .nav ul a{font-size:14.5px;padding-bottom:3px;border-bottom:1px solid transparent}
+  .nav ul a:hover{border-color:var(--indigo)}
+  .nav__cta{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--indigo);padding:11px 18px;transition:background .18s,color .18s}
+  .nav__cta:hover{background:var(--indigo);color:var(--stone)}
+  .nav__toggle{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:64px 0 0;overflow:hidden}
+  .hero__grid{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
+  .hero__eyebrow{display:flex;align-items:center;gap:14px;color:var(--muted);margin-bottom:26px}
+  .hero__eyebrow::before{content:"";width:46px;height:1px;background:var(--verm)}
+  .hero h1{
+    font-family:"Big Shoulders Display",sans-serif;font-weight:800;text-transform:uppercase;
+    font-size:clamp(64px,8.6vw,138px);line-height:.85;letter-spacing:-.005em;
+  }
+  .hero h1 em{font-style:normal;color:var(--verm);display:block}
+  .hero__sub{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:44px;padding-bottom:56px;align-items:end}
+  .hero__sub p{max-width:46ch;font-size:17.5px;color:#33362B}
+  .hero__actions{display:flex;gap:14px;align-items:center;justify-content:flex-end}
+  .btn{background:var(--indigo);color:var(--stone);padding:16px 26px;font-size:14.5px;display:inline-flex;gap:10px;transition:transform .18s,background .18s}
+  .btn:hover{background:var(--verm);transform:translateY(-2px)}
+  .btn--ghost{background:none;color:var(--indigo);border:1px solid var(--indigo)}
+  .btn--ghost:hover{background:var(--indigo);color:var(--stone)}
+  .rail{border-left:1px solid var(--indigo);padding:8px 0 8px 22px;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between}
+  .rail p{color:var(--muted);line-height:2}
+  .rail strong{display:block;font-size:13px;letter-spacing:.04em;color:var(--indigo);margin-top:6px}
+  .rail .knot{width:18px;height:18px;gap:2px;margin-top:16px}
+
+  /* photo band */
+  .band{position:relative;margin-top:10px}
+  .band__img{height:min(46vw,430px);width:100%;object-fit:cover;filter:grayscale(1) contrast(1.08) sepia(.08)}
+  .band__tag{position:absolute;left:52px;top:0;background:var(--verm);color:#fff;padding:20px 24px;max-width:260px}
+  .band__tag span{display:block;margin-top:6px;font-size:13px;line-height:1.45;opacity:.9}
+
+  /* ---------- sections ---------- */
+  .section{padding:104px 0}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:26px;border-bottom:1px solid var(--indigo);margin-bottom:46px}
+  .shead h2{font-size:clamp(38px,4.6vw,66px);line-height:.9;max-width:16ch}
+  .shead p{max-width:34ch;color:#3A3D32;font-size:15.5px;padding-bottom:6px}
+  .shead .mono{color:var(--verm);display:block;margin-bottom:14px}
+
+  .svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--indigo)}
+  .svc article{padding:32px 28px 40px;border-right:1px solid var(--line);position:relative;transition:background .22s,color .22s}
+  .svc article:first-child{padding-left:0}
+  .svc article:last-child{border-right:0;padding-right:0}
+  .svc article::before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:var(--verm);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .svc article:hover::before{transform:scaleX(1)}
+  .svc__num{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--muted)}
+  .svc h3{font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:40px;line-height:.95;margin:18px 0 16px;letter-spacing:0}
+  .svc p{font-size:15.5px;color:#3A3D32;max-width:32ch}
+  .svc ul{list-style:none;margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
+  .svc li{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:2.2}
+
+  /* ---------- team ---------- */
+  .team{background:var(--indigo);color:var(--stone);padding:104px 0 96px;position:relative;overflow:hidden}
+  .team .warp{position:absolute;inset:0;opacity:1;background-image:repeating-linear-gradient(90deg,rgba(228,226,216,.075) 0 1px,transparent 1px 26px)}
+  .team .wrap{position:relative}
+  .team .shead{border-color:rgba(228,226,216,.35)}
+  .team .shead p{color:#B9B7AC}
+  .team .shead .mono{color:#E0705A}
+  .team__rows{border-top:1px solid rgba(228,226,216,.35)}
+  .team__row{display:grid;grid-template-columns:80px 1fr 1fr auto;gap:32px;align-items:center;padding:30px 0;border-bottom:1px solid rgba(228,226,216,.2);transition:padding .25s}
+  .team__row:hover{padding-left:14px}
+  .team__row:hover .team__name{color:#E0705A}
+  .team__idx{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#7E8178}
+  .team__name{font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(34px,4vw,58px);line-height:.9;letter-spacing:0;transition:color .25s}
+  .team__role{color:#B9B7AC;font-size:15px}
+  .team__meta{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7E8178;text-align:right}
+
+  /* ---------- quote ---------- */
+  .quote{padding:96px 0}
+  .quote__grid{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start}
+  .quote__mark{font-family:"Big Shoulders Display",sans-serif;font-size:150px;line-height:.6;color:var(--verm);font-weight:800}
+  .quote blockquote{font-size:clamp(24px,2.6vw,34px);line-height:1.35;letter-spacing:-.015em;max-width:34ch;font-weight:500}
+  .quote__by{margin-top:28px;display:flex;align-items:center;gap:14px}
+  .quote__by::before{content:"";width:40px;height:1px;background:var(--indigo)}
+  .quote__by span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.9}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--stone-2);border-top:1px solid var(--indigo);padding:84px 0 40px}
+  .foot__top{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:end}
+  .foot h2{font-family:"Big Shoulders Display",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(52px,7vw,108px);line-height:.82;letter-spacing:0}
+  .foot h2 span{color:var(--verm)}
+  .foot__mail{display:inline-block;font-size:21px;border-bottom:1px solid var(--indigo);padding-bottom:4px;justify-self:start}
+  .foot__mail:hover{color:var(--verm);border-color:var(--verm)}
+  .foot__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .foot__cols h3{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .foot__cols li{list-style:none;font-size:14.5px;line-height:2}
+  .foot__bottom{display:flex;justify-content:space-between;margin-top:52px;color:var(--muted);font-size:12.5px}
+
+  /* ---------- mobile ---------- */
+  @media (max-width:880px){
+    .wrap{padding:0 20px}
+    .nav{height:66px}
+    .nav ul,.nav__cta{display:none}
+    .nav__toggle{display:block;width:44px;height:44px;border:1px solid var(--indigo);background:none;position:relative}
+    .nav__toggle::before,.nav__toggle::after{content:"";position:absolute;left:13px;width:18px;height:1.5px;background:var(--indigo)}
+    .nav__toggle::before{top:19px}.nav__toggle::after{top:26px}
+    .hero{padding-top:38px}
+    .hero__grid{display:block}
+    .hero h1{font-size:clamp(46px,14.5vw,74px);line-height:.86}
+    .rail{display:none}
+    .hero__sub{display:block;margin-top:30px;padding-bottom:40px}
+    .hero__sub p{font-size:16.5px}
+    .hero__actions{justify-content:flex-start;margin-top:24px;flex-wrap:wrap}
+    .btn{padding:14px 20px}
+    .band__img{height:300px}
+    .band__tag{left:20px;right:20px;top:auto;bottom:0;max-width:none;padding:16px 18px}
+    .section{padding:66px 0}
+    .shead{display:block;margin-bottom:30px}
+    .shead h2{font-size:42px;margin:12px 0}
+    .shead p{max-width:none}
+    .svc{display:block;border-top:1px solid var(--indigo)}
+    .svc article{padding:26px 0;border-right:0;border-bottom:1px solid var(--line)}
+    .svc h3{font-size:34px;margin:12px 0}
+    .team{padding:66px 0}
+    .team__row{grid-template-columns:44px 1fr;gap:6px 16px;padding:22px 0}
+    .team__idx{grid-row:1/4;align-self:start;padding-top:8px}
+    .team__name,.team__role,.team__meta{grid-column:2}
+    .team__meta{text-align:left}
+    .team__name{font-size:38px}
+    .quote{padding:60px 0}
+    .quote__grid{display:block}
+    .quote__mark{font-size:90px;margin-bottom:10px}
+    .quote blockquote{font-size:23px}
+    footer{padding:60px 0 30px}
+    .foot__top{display:block}
+    .foot__mail{display:inline-block;margin-top:22px;font-size:17px}
+    .foot h2{font-size:58px}
+    .foot__cols{grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+    .foot__bottom{display:block;margin-top:34px;line-height:1.9}
+    .foot__bottom span{display:block}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="knot"><i></i><i></i><i></i><i></i></span>Talenta Corner</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#equipe">Équipe</a></li>
+      <li><a href="#temoignages">Témoignages</a></li>
+    </ul>
+    <a class="nav__cta" href="#contact">Prendre contact</a>
+    <button class="nav__toggle" aria-label="Ouvrir le menu" aria-expanded="false"></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero__grid">
+        <div>
+          <p class="hero__eyebrow mono">Atelier de talents — Antananarivo, Madagascar</p>
+          <h1>On ne compte pas<br>les heures.<em>On tisse des équipes.</em></h1>
+        </div>
+        <aside class="rail">
+          <p class="mono">18.8792° S<br>47.5079° E<strong>Studio ouvert<br>depuis 2019</strong></p>
+          <span class="knot"><i></i><i></i><i></i><i></i></span>
+        </aside>
+      </div>
+
+      <div class="hero__sub">
+        <p>Développement, design produit et formation depuis Antananarivo. Un fil unique entre votre produit et nos talents — du cadrage au transfert des compétences.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#services">Voir les trois pôles ↗</a>
+          <a class="btn btn--ghost" href="#contact">Parler du projet</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="band">
+      <img class="band__img" src="assets/team.jpg" alt="Trois membres de Talenta Corner travaillant ensemble dans le studio d'Antananarivo">
+      <div class="band__tag">
+        <p class="mono">Le studio</p>
+        <span>Une équipe courte, un seul interlocuteur, des livraisons courtes.</span>
+      </div>
+    </figure>
+  </section>
+
+  <section class="section warp" id="services">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <span class="mono">01 — Les trois fils</span>
+          <h2 class="display">Trois pôles,<br>un même produit.</h2>
+        </div>
+        <p>Chaîne, trame et finition : chaque pôle intervient sur le même ouvrage, jamais en silo.</p>
+      </div>
+
+      <div class="svc">
+        <article>
+          <p class="svc__num">Fil 01</p>
+          <h3>Développement<br>web &amp; mobile</h3>
+          <p>React, Node, React Native. Des bases de code lisibles, testées, que vos équipes peuvent reprendre.</p>
+          <ul><li>React · Next</li><li>Node · API</li><li>React Native</li></ul>
+        </article>
+        <article>
+          <p class="svc__num">Fil 02</p>
+          <h3>Design<br>produit</h3>
+          <p>Recherche, parcours, interfaces et design system. Livré en Figma avec ses tokens, pas une maquette morte.</p>
+          <ul><li>Recherche</li><li>UI · Design system</li><li>Prototypage</li></ul>
+        </article>
+        <article>
+          <p class="svc__num">Fil 03</p>
+          <h3>Formation<br>&amp; transfert</h3>
+          <p>Vos équipes montent en compétences pendant le projet. Ateliers, pair-programming, documentation.</p>
+          <ul><li>Ateliers</li><li>Pair-programming</li><li>Documentation</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="equipe">
+    <div class="warp"></div>
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <span class="mono">02 — Le métier</span>
+          <h2 class="display">Trois personnes,<br>un seul standard.</h2>
+        </div>
+        <p>Pas de catalogue de CV. Une équipe courte qui travaille ensemble depuis 2021.</p>
+      </div>
+
+      <div class="team__rows">
+        <div class="team__row">
+          <span class="team__idx">T.01</span>
+          <span class="team__name">Miora Rakoto</span>
+          <span class="team__role">Lead front-end — 8 ans de métier</span>
+          <span class="team__meta">React · Design system</span>
+        </div>
+        <div class="team__row">
+          <span class="team__idx">T.02</span>
+          <span class="team__name">Andry Razafy</span>
+          <span class="team__role">Designer produit — 6 ans de métier</span>
+          <span class="team__meta">Recherche · UI</span>
+        </div>
+        <div class="team__row">
+          <span class="team__idx">T.03</span>
+          <span class="team__name">Hanta Ramaroson</span>
+          <span class="team__role">Cheffe de projet — 9 ans de métier</span>
+          <span class="team__meta">Cadrage · Livraison</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="temoignages">
+    <div class="wrap quote__grid">
+      <div class="quote__mark">“</div>
+      <div>
+        <blockquote>Ils ont repris un back-office laissé à l'abandon en trois semaines. Le code est documenté, testé, et notre équipe peut enfin le faire évoluer.</blockquote>
+        <div class="quote__by"><span>Claire Mercier<br>Directrice technique · éditeur SaaS, Lyon</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot__top">
+      <h2>Tirons<br><span>un fil ensemble.</span></h2>
+      <a class="foot__mail" href="mailto:bonjour@talenta-corner.mg">bonjour@talenta-corner.mg</a>
+    </div>
+    <div class="foot__cols">
+      <div><h3>Pôles</h3><ul><li>Développement</li><li>Design produit</li><li>Formation</li></ul></div>
+      <div><h3>Studio</h3><ul><li>Équipe</li><li>Témoignages</li><li>Contact</li></ul></div>
+      <div><h3>Adresse</h3><ul><li>Antananarivo, Madagascar</li><li>UTC+3</li><li>FR · EN</li></ul></div>
+    </div>
+    <div class="foot__bottom"><span>© 2026 Talenta Corner</span><span>Direction artistique — Tissage</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

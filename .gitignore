@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+sanity/node_modules/
+sanity/dist/

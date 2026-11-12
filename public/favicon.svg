@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Talenta Corner">
+  <rect width="64" height="64" fill="#E4E2D8"/>
+  <rect x="14" y="14" width="16" height="16" fill="#C0391F"/>
+  <rect x="34" y="14" width="16" height="16" fill="#181B33"/>
+  <rect x="14" y="34" width="16" height="16" fill="#181B33"/>
+  <rect x="34" y="34" width="16" height="16" fill="#C0391F"/>
+</svg>
