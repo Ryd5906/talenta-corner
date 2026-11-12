@@ -3,6 +3,8 @@
 > Site vitrine React pour **Talenta Corner**, plateforme d'externalisation basée à Antananarivo (Madagascar).
 > Services, équipe et témoignages sont pilotés par un CMS headless **Sanity** ; le site reste lisible même sans CMS grâce à un contenu local de secours.
 
+**En ligne :** https://talenta-corner.vercel.app
+
 ## Le parcours couvert
 
 | Tâche | Livrable | Emplacement |
@@ -12,7 +14,7 @@
 | 3. Développement UI | Composants Services, Équipe, Témoignages + hooks | [`src/components/`](src/components/) |
 | 4. Intégration CMS | Client Sanity, requête GROQ, schémas et studio | [`src/lib/sanity.js`](src/lib/sanity.js), [`sanity/`](sanity/) |
 | 5. Performance et SEO | Optimisations + document d'explication | [`docs/performance-seo.md`](docs/performance-seo.md) |
-| 6. Déploiement et présentation | Script vidéo (enregistré par la porteuse du projet) | [`docs/script-video.md`](docs/script-video.md) |
+| 6. Déploiement et présentation | Site en production + script vidéo (enregistré par la porteuse du projet) | https://talenta-corner.vercel.app · [`docs/script-video.md`](docs/script-video.md) |
 
 ## Direction artistique — « Tissage »
 
@@ -43,6 +45,14 @@ npm run preview  # prévisualisation du build
 ```
 
 Node 18 ou plus récent.
+
+## Déploiement
+
+Le site tourne sur **https://talenta-corner.vercel.app** : Vercel détecte le framework Vite, exécute `npm run build` et sert `dist/` via son CDN, HTTPS inclus.
+
+```bash
+npx vercel --prod
+```
 
 ## Variables d'environnement
 

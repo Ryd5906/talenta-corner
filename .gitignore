@@ -5,3 +5,5 @@ dist/
 .DS_Store
 sanity/node_modules/
 sanity/dist/
+
+.vercel
