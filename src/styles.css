@@ -1036,6 +1036,7 @@ ul {
 
   .hero__band img {
     height: min(46vw, 430px);
+    object-position: center 10%;
   }
 
   .hero__tag {

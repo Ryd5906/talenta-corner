@@ -154,6 +154,6 @@ talenta-corner/
 - Contenu de démonstration : les noms, témoignages et textes sont fictifs ; seules les informations publiques de Talenta Corner (mission, services, ancrage) sont utilisées.
 - Pas de formulaire de contact côté serveur : le bouton ouvre un e-mail (`mailto:`).
 - Le studio Sanity n'est pas déployé en ligne (il se lance en local) ; le site fonctionne sans lui.
-- La photo du bandeau est une image d'illustration : les personnes qui y figurent ne sont pas membres de l'équipe.
+- La photo du bandeau est une image d'illustration : les personnes qui y figurent ne sont pas membres de l'équipe. Source : [Pexels](https://www.pexels.com/photo/coworkers-looking-at-a-laptop-in-an-office-8127690/), licence Pexels (usage commercial gratuit, sans attribution obligatoire), recadrée en noir et blanc.
 - L'équipe est présentée en registres typographiques (noms, rôles, bios), sans portraits.
 - Aucun test automatisé pour l'instant ; la recette a été faite manuellement à 390, 768 et 1440 px.

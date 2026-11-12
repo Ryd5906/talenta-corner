@@ -11,13 +11,13 @@ Chaque optimisation du site, ce qu'elle fait, où elle vit et pourquoi elle comp
   src="/studio.jpg"
   srcSet="/studio-800.webp 800w, /studio-1280.webp 1280w"
   sizes="100vw"
-  alt="Trois membres de l'équipe Talenta Corner au travail dans le studio d'Antananarivo"
+  alt="Trois collègues penchés sur un ordinateur portable dans un bureau lumineux"
   width="1280" height="800"
   fetchPriority="high" decoding="async"
 />
 ```
 
-- `srcSet` + `sizes="100vw"` : le navigateur choisit la variante adaptée à l'écran et à la densité. En mobile 390 px × 2, il télécharge le fichier 800 px (31 Ko) au lieu de 100 Ko.
+- `srcSet` + `sizes="100vw"` : le navigateur choisit la variante adaptée à l'écran et à la densité. En mobile 390 px × 2, il télécharge le fichier 800 px (31 Ko) au lieu de 110 Ko.
 - WebP d'abord, JPEG en repli via `src` : formats modernes pour presque tous les navigateurs, aucune image cassée ailleurs.
 - `width` / `height` : le ratio est réservé → pas de saut de mise en page (CLS = 0).
 - `fetchPriority="high"` : c'est le visuel d'ouverture, il ne doit pas attendre le reste du chargement. Pas de `loading="lazy"` ici, précisément parce qu'il fait partie du premier écran.

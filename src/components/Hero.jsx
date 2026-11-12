@@ -49,7 +49,7 @@ export default function Hero({ site }) {
           src="/studio.jpg"
           srcSet="/studio-800.webp 800w, /studio-1280.webp 1280w"
           sizes="100vw"
-          alt="Trois membres de l'équipe Talenta Corner au travail dans le studio d'Antananarivo"
+          alt="Trois collègues penchés sur un ordinateur portable dans un bureau lumineux"
           width="1280"
           height="800"
           fetchPriority="high"

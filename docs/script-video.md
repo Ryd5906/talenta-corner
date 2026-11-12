@@ -43,7 +43,7 @@
 **2:30 — Performance et SEO.**
 *Ouvre l'onglet réseau ou montre le tableau des mesures.*
 « Le site pèse environ 167 kilo-octets sur une connexion 3G lente, avec un premier octet à 0,40 seconde et un chargement complet autour de 3,4 secondes. »
-« Quatre leviers : les polices sont auto-hébergées, sous-ensemblées et préchargées ; la photo du studio est servie en WebP, dans une version 800 pixels en mobile — 31 kilo-octets au lieu de 100 ; le client Sanity est importé dynamiquement, donc absent du bundle initial ; et les témoignages sont un fichier séparé, précaché au survol du lien. »
+« Quatre leviers : les polices sont auto-hébergées, sous-ensemblées et préchargées ; la photo du studio est servie en WebP, dans une version 800 pixels en mobile — 31 kilo-octets au lieu de 110 ; le client Sanity est importé dynamiquement, donc absent du bundle initial ; et les témoignages sont un fichier séparé, précaché au survol du lien. »
 « Côté SEO : titre et description uniques, Open Graph, et données structurées JSON-LD qui décrivent l'organisation et ses services. »
 
 **3:15 — Conclusion.**
